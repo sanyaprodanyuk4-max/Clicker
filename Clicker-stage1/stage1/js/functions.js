@@ -31,15 +31,16 @@ document.body.addEventListener("click", (e) => {
       points++;
       e.target.classList.remove("rocket");
       e.target.remove();
-      destroyedEvent("bang", x2, y2)
+      destroyedEvent("bang", x2, y2);
       delete rockets[idTarget];
     }
   }
   shots++;
-  let accuracy = points / shots * 100;
+  let accuracy = (points / shots) * 100;
   document.getElementById("points").textContent = `Влучання: ${points}`;
   document.getElementById("shots").textContent = `Пострілів: ${shots}`;
-  document.getElementById("accuracy").textContent = `Відсоток влучань: ${accuracy.toFixed(0)}%`;
+  document.getElementById("accuracy").textContent =
+    `Відсоток влучань: ${accuracy.toFixed(0)}%`;
 });
 
 document.body.addEventListener("mousemove", (e) => {
@@ -59,6 +60,6 @@ function destroyedEvent(event, x, y) {
   let element = document.createElement(event);
   element.classList.add(event);
   document.body.append(element);
-  element.style.left = (x - element.clientWidth / 2) + "px";
-  element.style.top = (y - element.clientHeight / 2) + "px";
+  element.style.left = x - element.clientWidth / 2 + "px";
+  element.style.top = y - element.clientHeight / 2 + "px";
 }

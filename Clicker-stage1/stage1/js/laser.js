@@ -15,9 +15,9 @@ class laserRay {
     let ray = document.createElement("div");
     ray.id = "ray";
     ray.style.left = this.x1 + "px";
-    ray.style.top = (this.y1) + "px";
+    ray.style.top = this.y1 + "px";
     ray.style.width = this.length + "px";
-    ray.style.transform = `rotate(${this.angle}rad) translateX(${this.length / 2 * (1 - Math.cos(this.angle))}px) translateY(${this.length / 2 * Math.sin(this.angle)}px)`;
+    ray.style.transform = `rotate(${this.angle}rad) translateX(${(this.length / 2) * (1 - Math.cos(this.angle))}px) translateY(${(this.length / 2) * Math.sin(this.angle)}px)`;
     document.body.append(ray);
   }
 }
